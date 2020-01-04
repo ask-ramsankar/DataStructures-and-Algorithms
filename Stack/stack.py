@@ -8,11 +8,11 @@ class stack:
     def pop(self):
         return self.items.pop()
 
-    def inEmpty(self):
+    def isEmpty(self):
         return len(self.items) == 0
 
     def peek(self):
-        return self.items[len(self.items)-1]
+        return self.items[-1]
 
     def size(self):
         return len(self.items)
