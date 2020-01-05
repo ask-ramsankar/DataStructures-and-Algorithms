@@ -1,5 +1,5 @@
 ## What is circular linked list?
-It can be singular or doubular. Only difference is tail node of the LL contains the address of the head node. so if you traverse in the Circular LL it will form a loop.
+It can be singular or doubular. Only difference is tail node of the LL contains the address of the head node. so if you traverse in the Circular LL it will form a loop. you can start from anywhere to reveal all the data.
 ## Why circular linked list?
 If once we traversed to the last again coming to head node needs some iterations. CLL is used to overcome this problem. It reduces the time too.
 ## Applications of Circular Linked List?
