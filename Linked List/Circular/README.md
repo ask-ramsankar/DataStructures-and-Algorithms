@@ -3,4 +3,4 @@ It can be singular or doubular. Only difference is tail node of the LL contains 
 ## Why circular linked list?
 If once we traversed to the last again coming to head node needs some iterations. CLL is used to overcome this problem. It reduces the time too.
 ## Applications of Circular Linked List?
-- In processing Management (Round Robin Method )
+- In CPU processing Management (Round Robin Method )
