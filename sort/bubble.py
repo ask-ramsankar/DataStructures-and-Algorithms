@@ -14,6 +14,12 @@ class BubbleSort:
         assert self.total_nodes > 1, "Not enough nodes to sort"
 
     def sort(self, sort_order: SortOrder) -> list:
+        """
+        This method sorts the nodes using the Bubble sorting algorithm
+        based on sort order (ascending or descending)
+        :param sort_order: Order of sorting. 0(ascending) or 1(descending)
+        :return: Sorted List of Nodes
+        """
         for node_index in range(self.total_nodes):
             swapped = False
 
@@ -44,7 +50,7 @@ class BubbleSort:
 if __name__ == '__main__':
     # Example Use-case
     eg_nodes = [35, 33, 42, 10, 14, 19, 27, 44, 26, 31]
-    # Selection Sort
+    # Bubble Sort
     print("Sorted (Ascending):", BubbleSort(eg_nodes).sort(SortOrder.ASC))
     # --> [10, 14, 19, 26, 27, 31, 33, 35, 42, 44]
     print("Sorted (Descending):", BubbleSort(eg_nodes).sort(SortOrder.DESC))
