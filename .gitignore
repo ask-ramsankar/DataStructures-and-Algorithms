@@ -1,0 +1,5 @@
+# Environment Files
+venv
+
+# Cache IDE
+.idea/

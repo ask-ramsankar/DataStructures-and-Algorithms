@@ -1,16 +1,5 @@
-import enum
-
-
-# Type of the Heap
-class HeapType(enum.Enum):
-    MIN = 0
-    MAX = 1
-
-
-# Type of Ordering
-class SortOrder(enum.Enum):
-    ASC = 0
-    DESC = 1
+from heap_ds.heap_type import HeapType
+from sort.utils import SortOrder
 
 
 # Heap Data Structure
@@ -18,6 +7,7 @@ class SortOrder(enum.Enum):
 # |-- 1. Complete tree (other than the last level each level should be completely filled).
 # |----  This property makes it suitable to store the Heap in the list
 # |-- 2. Parent node of each child is lesser in Min-Heap and greater in Max-Heap
+# |-- 3. Time Complexity: O(n * log(n)) [n -> No. of nodes]
 # @dev: Each state of the heap while structuring will be stored in self.__heap
 class Heap:
 
