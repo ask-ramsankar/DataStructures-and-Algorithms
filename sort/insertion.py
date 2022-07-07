@@ -45,7 +45,7 @@ class InsertionSort:
 if __name__ == '__main__':
     # Example Use-case
     eg_nodes = [35, 33, 42, 10, 14, 19, 27, 44, 26, 31]
-    # Bubble Sort
+    # Insertion Sort
     print("Sorted (Ascending):", InsertionSort(eg_nodes).sort(SortOrder.ASC))
     # --> [10, 14, 19, 26, 27, 31, 33, 35, 42, 44]
     print("Sorted (Descending):", InsertionSort(eg_nodes).sort(SortOrder.DESC))
