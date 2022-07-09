@@ -11,6 +11,17 @@ for row_index in range(rows):
             print(" ", end="")
     # Moving the cursor to next row
     print()
+"""
+# Output
+# --- Left Triangle --- #
+*      
+**     
+***    
+****   
+*****  
+****** 
+*******
+"""
 
 print()
 print("# --- Right Triangle --- #")
@@ -22,6 +33,17 @@ for row_index in range(rows):
             print("*", end="")
     # Moving the cursor to next row
     print()
+"""
+# Output
+# --- Right Triangle --- #
+      *
+     **
+    ***
+   ****
+  *****
+ ******
+*******
+"""
 
 print()
 print("# --- Triangle --- #")
@@ -32,6 +54,14 @@ for row_index in range(rows // 2, rows):
         else:
             print(" ", end="")
     print()
+"""
+# Output
+# --- Triangle --- #
+   *   
+  ***  
+ ***** 
+*******
+"""
 
 print()
 print("# --- Hourglass --- #")
@@ -42,6 +72,17 @@ for row_index in range(rows):
         else:
             print(" ", end="")
     print()
+"""
+# Output
+# --- Hourglass --- #
+*******
+ ***** 
+  ***  
+   *   
+  ***  
+ ***** 
+*******
+"""
 
 print()
 print("# --- Side-way Triangle --- #")
@@ -52,9 +93,20 @@ for row_index in range(rows):
         else:
             print(" ", end="")
     print()
+"""
+# Output
+# --- Side-way Triangle --- #
+*      
+**     
+***    
+****   
+***    
+**     
+*
+"""
 
 print()
-print("# --- Zoho Interview Patter --- #")
+print("# --- Zoho Interview Pattern --- #")
 columns = 11
 rows = 11
 for row_index in range(rows // 2 + 1):
@@ -64,3 +116,13 @@ for row_index in range(rows // 2 + 1):
         else:
             print(" ", end='')
     print()
+"""
+# Output
+# --- Zoho Interview Patter --- #
+54321012345
+ 432101234 
+  3210123  
+   21012   
+    101    
+     0
+"""
