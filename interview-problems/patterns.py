@@ -129,8 +129,8 @@ for row_index in range(rows // 2 + 1):
 
 print()
 print("# --- Zoho Interview Pattern --- #")
-columns = 6
-rows = 6
+columns = 7
+rows = 7
 for row_index in range(rows):
     for column_index in range(columns):
         if row_index == column_index or row_index == rows - column_index - 1:
