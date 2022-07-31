@@ -25,7 +25,7 @@ True if A can reach to B else False
 2 5 7 9
 4
 2 7
-5 9
+5 2
 7 9
 2 5
 2
@@ -52,19 +52,21 @@ class DeveloperNetwork:
         :return: Boolean
         """
 
+        if _member == _target_member:
+            return True
+
         # Verify this member already has been checked or not
         if self.__checked_members.get(_member, False):
             return False
-
-        if _member == _target_member:
-            return True
 
         # Marking Checked Members
         # To avoid checking in a loop (eg, a -> b -> c -> a)
         self.__checked_members[_member] = True
 
         for _follower in self.members[_member]:
-            return self.__check_connection(_follower, _target_member)
+            reached = self.__check_connection(_follower, _target_member)
+            if reached:
+                return True
         return False
 
     def add_follower(self, _member, _following):
