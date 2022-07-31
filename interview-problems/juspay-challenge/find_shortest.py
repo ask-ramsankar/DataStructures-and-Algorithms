@@ -33,7 +33,7 @@ The shortest time delay if reachable else -1
 2
 9
 ## Output
-True
+3
 """
 
 
