@@ -80,8 +80,8 @@ class DeveloperNetwork:
         """
         It checks the member_a can reach member_b or not using the
         internal __check_connection function.
-        :param _member_a:
-        :param _member_b:
+        :param _member_a: member A
+        :param _member_b: member B
         :return:
         """
         self.__checked_members = dict()
