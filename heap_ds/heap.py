@@ -85,10 +85,7 @@ class Heap:
         """
         self.__heap = self.nodes.copy()
         for node_index in range(self.total_nodes // 2 - 1, -1, -1):
-            if heap_type == HeapType.MIN:
-                self.__heapify(heap_type, self.total_nodes, node_index)
-            else:
-                self.__heapify(heap_type, self.total_nodes, node_index)
+            self.__heapify(heap_type, self.total_nodes, node_index)
 
         heap = self.__heap
         # Clean-Up
