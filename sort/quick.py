@@ -23,31 +23,32 @@ class QuickSort:
         :param sort_order: Order of sorting (Ascending or Descending)
         :return: Index of the pivot value
         """
+        
+        # Consider the right_index node as current pivot node
+        pivot_index = right_index
 
-        pivot_value = self.__nodes[right_index]
+        # This index will give you the exact position pivot node
+        # Initiating it to left_index - 1 because we will increment before every swap
+        finder_index = left_index - 1
 
-        # This index will give you the exact position of last smaller node (compares to pivot)
-        # Initially setting it to -1
-        traverse_index = left_index - 1
-
-        for current_index in range(left_index, right_index + 1):
-            if sort_order == SortOrder.ASC and self.__nodes[current_index] < pivot_value:
-                traverse_index += 1
-                self.__nodes[current_index], self.__nodes[traverse_index] = (
-                    self.__nodes[traverse_index],
-                    self.__nodes[current_index]
+        for traverse_index in range(left_index, right_index + 1):
+            if sort_order == SortOrder.ASC and self.__nodes[traverse_index] < self.__nodes[pivot_index]:
+                finder_index += 1
+                self.__nodes[traverse_index], self.__nodes[finder_index] = (
+                    self.__nodes[finder_index],
+                    self.__nodes[traverse_index]
                 )
 
-            elif sort_order == SortOrder.DESC and self.__nodes[current_index] > pivot_value:
-                traverse_index += 1
-                self.__nodes[current_index], self.__nodes[traverse_index] = (
+            elif sort_order == SortOrder.DESC and self.__nodes[traverse_index] > self.__nodes[pivot_index]:
+                finder_index += 1
+                self.__nodes[traverse_index], self.__nodes[finder_index] = (
                     self.__nodes[traverse_index],
-                    self.__nodes[current_index]
+                    self.__nodes[traverse_index]
                 )
 
-        exact_pivot_index = traverse_index + 1
-        self.__nodes[exact_pivot_index], self.__nodes[right_index] = (
-            self.__nodes[right_index],
+        exact_pivot_index = finder_index + 1
+        self.__nodes[exact_pivot_index], self.__nodes[pivot_index] = (
+            self.__nodes[pivot_index],
             self.__nodes[exact_pivot_index]
         )
         return exact_pivot_index
