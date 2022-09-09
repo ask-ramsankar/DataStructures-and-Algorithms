@@ -1,5 +1,11 @@
-from heap_ds.heap_type import HeapType
 from sort.utils import SortOrder
+from enum import Enum
+
+
+# Type of the Heap
+class HeapType(Enum):
+    MIN = 0
+    MAX = 1
 
 
 # Heap Data Structure
