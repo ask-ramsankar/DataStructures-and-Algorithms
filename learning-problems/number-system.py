@@ -1,4 +1,8 @@
 from enum import Enum
+"""
+@problem: Number Systems
+@description: Converting one type of number system to another by changing the base
+"""
 
 
 class NumberBase(Enum):
@@ -11,19 +15,37 @@ class NumberBase(Enum):
 class Resolver:
 
     @staticmethod
-    def get_repr(number: int, base: NumberBase):
-        if base == NumberBase.HEXADECIMAL and number > 9:
+    def get_repr(number: int, to_base: NumberBase):
+        """
+        Returns the representation of "to_base" of a decimal "number"
+        :param number: Number the find the representation [Eg, 2 -> 2, 11 -> B]
+        :param to_base: Base of the Number System
+        :return: Representation of a number
+        """
+        if to_base == NumberBase.HEXADECIMAL and number > 9:
             return chr(ord('A') + number - 10)
         return str(number)
 
     @staticmethod
-    def get_value(_repr: str, base: NumberBase):
-        if base == NumberBase.HEXADECIMAL and _repr.isalpha():
+    def get_value(_repr: str, from_base: NumberBase):
+        """
+        Return the value in decimals of the Representation of different NumberSystems
+        :param _repr: Representation of the Number system with base of "from_base"
+        :param from_base: Number System base of the Representation
+        :return: Value in decimal
+        """
+        if from_base == NumberBase.HEXADECIMAL and _repr.isalpha():
             return 10 + ord(_repr.upper()) - ord('A')
         return int(_repr)
 
     @staticmethod
     def convert_decimal(number: int, to_base: NumberBase):
+        """
+        Helper method to convert the decimal number to the "to_base" NumberSystem
+        :param number: Decimal number
+        :param to_base: Number System base to convert the number
+        :return: converted number in "to_base" Number system
+        """
         output = Resolver.get_repr(number % to_base.value, to_base)
         number = number // to_base.value
         while number != 0:
@@ -33,6 +55,12 @@ class Resolver:
 
     @staticmethod
     def convert_to_decimal(number: str, from_base: NumberBase):
+        """
+        Helper method to convert other number system no to decimal no
+        :param number: Representation of a decimal number in "from_base"
+        :param from_base: Number System base of the "number"
+        :return: Decimal number of the "number"
+        """
         if from_base == NumberBase.DECIMAL:
             return int(number)
 
@@ -48,6 +76,13 @@ class Resolver:
 
     @staticmethod
     def change_base(number: str, from_base: NumberBase, to_base: NumberBase):
+        """
+        Converts the number from one number system base to another base
+        :param number: Number to convert
+        :param from_base: Number system base of the "number"
+        :param to_base: Number system base of the "number" to convert
+        :return: Converted Number in "to_base"
+        """
         decimal_number = Resolver.convert_to_decimal(number, from_base)
         return Resolver.convert_decimal(decimal_number, to_base)
 
